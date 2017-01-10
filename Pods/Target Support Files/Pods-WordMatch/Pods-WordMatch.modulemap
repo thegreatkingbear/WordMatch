@@ -1,0 +1,6 @@
+framework module Pods_WordMatch {
+  umbrella header "Pods-WordMatch-umbrella.h"
+
+  export *
+  module * { export * }
+}

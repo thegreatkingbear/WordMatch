@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DABCEFFF02E017E0F440291 /* Pods_WordMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B5C976EAAF09F46A3BF99C /* Pods_WordMatch.framework */; };
 		E7FF1EB01E248CFC0028B5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FF1EAF1E248CFC0028B5A4 /* AppDelegate.swift */; };
-		E7FF1EB21E248CFC0028B5A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FF1EB11E248CFC0028B5A4 /* ViewController.swift */; };
 		E7FF1EB51E248CFC0028B5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FF1EB31E248CFC0028B5A4 /* Main.storyboard */; };
 		E7FF1EB71E248CFC0028B5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FF1EB61E248CFC0028B5A4 /* Assets.xcassets */; };
 		E7FF1EBA1E248CFC0028B5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FF1EB81E248CFC0028B5A4 /* LaunchScreen.storyboard */; };
+		E7FF1EC21E248DB40028B5A4 /* MainGameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FF1EC11E248DB40028B5A4 /* MainGameCollectionViewController.swift */; };
+		E7FF1EC41E248E0D0028B5A4 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FF1EC31E248E0D0028B5A4 /* CardCollectionViewCell.swift */; };
+		E7FF1EC61E24C40E0028B5A4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FF1EC51E24C40E0028B5A4 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C24F140E835E3ADD7B66E69 /* Pods-WordMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordMatch/Pods-WordMatch.debug.xcconfig"; sourceTree = "<group>"; };
+		65B5C976EAAF09F46A3BF99C /* Pods_WordMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BD6382F4B654CB99194A1F8 /* Pods-WordMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordMatch/Pods-WordMatch.release.xcconfig"; sourceTree = "<group>"; };
 		E7FF1EAC1E248CFC0028B5A4 /* WordMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FF1EAF1E248CFC0028B5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7FF1EB11E248CFC0028B5A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7FF1EB41E248CFC0028B5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7FF1EB61E248CFC0028B5A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7FF1EB91E248CFC0028B5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7FF1EBB1E248CFC0028B5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7FF1EC11E248DB40028B5A4 /* MainGameCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameCollectionViewController.swift; sourceTree = "<group>"; };
+		E7FF1EC31E248E0D0028B5A4 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7FF1EC51E24C40E0028B5A4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DABCEFFF02E017E0F440291 /* Pods_WordMatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37EF03AA3837B503BDA4695B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C24F140E835E3ADD7B66E69 /* Pods-WordMatch.debug.xcconfig */,
+				6BD6382F4B654CB99194A1F8 /* Pods-WordMatch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B5FA24A95ACDF5B60A2A13D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65B5C976EAAF09F46A3BF99C /* Pods_WordMatch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E7FF1EA31E248CFC0028B5A4 = {
 			isa = PBXGroup;
 			children = (
 				E7FF1EAE1E248CFC0028B5A4 /* WordMatch */,
 				E7FF1EAD1E248CFC0028B5A4 /* Products */,
+				37EF03AA3837B503BDA4695B /* Pods */,
+				B5FA24A95ACDF5B60A2A13D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,8 +82,10 @@
 		E7FF1EAE1E248CFC0028B5A4 /* WordMatch */ = {
 			isa = PBXGroup;
 			children = (
+				E7FF1EC11E248DB40028B5A4 /* MainGameCollectionViewController.swift */,
+				E7FF1EC51E24C40E0028B5A4 /* Player.swift */,
+				E7FF1EC31E248E0D0028B5A4 /* CardCollectionViewCell.swift */,
 				E7FF1EAF1E248CFC0028B5A4 /* AppDelegate.swift */,
-				E7FF1EB11E248CFC0028B5A4 /* ViewController.swift */,
 				E7FF1EB31E248CFC0028B5A4 /* Main.storyboard */,
 				E7FF1EB61E248CFC0028B5A4 /* Assets.xcassets */,
 				E7FF1EB81E248CFC0028B5A4 /* LaunchScreen.storyboard */,
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7FF1EBE1E248CFC0028B5A4 /* Build configuration list for PBXNativeTarget "WordMatch" */;
 			buildPhases = (
+				DA6A86C57E084B5E51FCCB34 /* [CP] Check Pods Manifest.lock */,
 				E7FF1EA81E248CFC0028B5A4 /* Sources */,
 				E7FF1EA91E248CFC0028B5A4 /* Frameworks */,
 				E7FF1EAA1E248CFC0028B5A4 /* Resources */,
+				76905F6440E3F933A80BE889 /* [CP] Embed Pods Frameworks */,
+				6EA92060992BBF42FBF079DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,13 +165,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6EA92060992BBF42FBF079DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordMatch/Pods-WordMatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76905F6440E3F933A80BE889 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordMatch/Pods-WordMatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA6A86C57E084B5E51FCCB34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7FF1EA81E248CFC0028B5A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7FF1EB21E248CFC0028B5A4 /* ViewController.swift in Sources */,
+				E7FF1EC61E24C40E0028B5A4 /* Player.swift in Sources */,
 				E7FF1EB01E248CFC0028B5A4 /* AppDelegate.swift in Sources */,
+				E7FF1EC41E248E0D0028B5A4 /* CardCollectionViewCell.swift in Sources */,
+				E7FF1EC21E248DB40028B5A4 /* MainGameCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +342,7 @@
 		};
 		E7FF1EBF1E248CFC0028B5A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C24F140E835E3ADD7B66E69 /* Pods-WordMatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9E3BES8CW5;
@@ -272,6 +356,7 @@
 		};
 		E7FF1EC01E248CFC0028B5A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BD6382F4B654CB99194A1F8 /* Pods-WordMatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9E3BES8CW5;

@@ -1,26 +1,123 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="05L-ze-vqM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--단어 맞추기 게임-->
+        <scene sceneID="Bcu-at-CFb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <collectionViewController id="VZh-z9-l6y" customClass="MainGameCollectionViewController" customModule="WordMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2RF-Li-wcR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.07221615184362179" green="0.59893657290256086" blue="0.078625182590722834" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YGh-lf-s3M">
+                            <size key="itemSize" width="80" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WordCard" id="WIS-XS-4xr" customClass="CardCollectionViewCell" customModule="WordMatch" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="8Oo-OW-6Uh">
+                                            <rect key="frame" x="8" y="15" width="64" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="4oC-rV-29I"/>
+                                                <constraint firstAttribute="height" constant="21" id="DK5-jJ-nxJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="questions-marks" translatesAutoresizingMaskIntoConstraints="NO" id="3aG-up-blo">
+                                            <rect key="frame" x="19" y="8" width="42" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8Oo-OW-6Uh" firstAttribute="centerY" secondItem="WIS-XS-4xr" secondAttribute="centerY" id="0S0-Kd-U1O"/>
+                                    <constraint firstItem="8Oo-OW-6Uh" firstAttribute="centerX" secondItem="WIS-XS-4xr" secondAttribute="centerX" id="DiK-rr-X7c"/>
+                                </constraints>
+                                <size key="customSize" width="80" height="50"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="questionMark" destination="3aG-up-blo" id="1Fe-iR-cic"/>
+                                    <outlet property="word" destination="8Oo-OW-6Uh" id="Vuc-Xm-V5q"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="VZh-z9-l6y" id="cQL-pp-k2u"/>
+                            <outlet property="delegate" destination="VZh-z9-l6y" id="QAe-BA-6yv"/>
+                        </connections>
+                    </collectionView>
+                    <toolbarItems>
+                        <barButtonItem title="아빠 : 0" id="Grg-43-2qr"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Jzg-QE-hat"/>
+                        <barButtonItem title="나 : 0" id="p4C-B7-cYd"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="kmq-7c-Rfo"/>
+                        <barButtonItem title="엄마 : 0" id="YgN-dS-9Bf"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="단어 맞추기 게임" id="A6I-ta-rtE">
+                        <barButtonItem key="leftBarButtonItem" title="단어" id="sy3-74-zvx"/>
+                        <barButtonItem key="rightBarButtonItem" title="시작" id="Y3p-2D-9C3">
+                            <connections>
+                                <action selector="startButtonTappedWithSender:" destination="VZh-z9-l6y" id="3di-bs-2Dn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="player1" destination="Grg-43-2qr" id="RjY-yM-Lze"/>
+                        <outlet property="player2" destination="p4C-B7-cYd" id="RQ6-U2-VcC"/>
+                        <outlet property="player3" destination="YgN-dS-9Bf" id="r1E-So-8Wr"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9V-0z-y1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1679" y="136"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IPX-6z-Ywe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="05L-ze-vqM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DPF-zP-0To">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rij-Jk-skI">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="VZh-z9-l6y" kind="relationship" relationship="rootViewController" id="5iJ-dd-7Xk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Iy-Ev-EVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920.79999999999995" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="questions-marks" width="242" height="242"/>
+    </resources>
 </document>
