@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7DABCEFFF02E017E0F440291 /* Pods_WordMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B5C976EAAF09F46A3BF99C /* Pods_WordMatch.framework */; };
+		E71B63491E25B48D00B2B92B /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B63481E25B48D00B2B92B /* Word.swift */; };
+		E71B634B1E25B69300B2B92B /* WordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B634A1E25B69300B2B92B /* WordsTableViewController.swift */; };
+		E71B634D1E25CAD400B2B92B /* WordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B634C1E25CAD400B2B92B /* WordHelper.swift */; };
+		E71B634F1E25D23600B2B92B /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B634E1E25D23600B2B92B /* WordTableViewCell.swift */; };
 		E7FF1EB01E248CFC0028B5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FF1EAF1E248CFC0028B5A4 /* AppDelegate.swift */; };
 		E7FF1EB51E248CFC0028B5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FF1EB31E248CFC0028B5A4 /* Main.storyboard */; };
 		E7FF1EB71E248CFC0028B5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FF1EB61E248CFC0028B5A4 /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 		5C24F140E835E3ADD7B66E69 /* Pods-WordMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordMatch/Pods-WordMatch.debug.xcconfig"; sourceTree = "<group>"; };
 		65B5C976EAAF09F46A3BF99C /* Pods_WordMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BD6382F4B654CB99194A1F8 /* Pods-WordMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordMatch/Pods-WordMatch.release.xcconfig"; sourceTree = "<group>"; };
+		E71B63481E25B48D00B2B92B /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		E71B634A1E25B69300B2B92B /* WordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsTableViewController.swift; sourceTree = "<group>"; };
+		E71B634C1E25CAD400B2B92B /* WordHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordHelper.swift; sourceTree = "<group>"; };
+		E71B634E1E25D23600B2B92B /* WordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 		E7FF1EAC1E248CFC0028B5A4 /* WordMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FF1EAF1E248CFC0028B5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7FF1EB41E248CFC0028B5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,9 +92,13 @@
 			children = (
 				E7FF1EC11E248DB40028B5A4 /* MainGameCollectionViewController.swift */,
 				E7FF1EC51E24C40E0028B5A4 /* Player.swift */,
+				E71B63481E25B48D00B2B92B /* Word.swift */,
 				E7FF1EC31E248E0D0028B5A4 /* CardCollectionViewCell.swift */,
 				E7FF1EAF1E248CFC0028B5A4 /* AppDelegate.swift */,
 				E7FF1EB31E248CFC0028B5A4 /* Main.storyboard */,
+				E71B634A1E25B69300B2B92B /* WordsTableViewController.swift */,
+				E71B634E1E25D23600B2B92B /* WordTableViewCell.swift */,
+				E71B634C1E25CAD400B2B92B /* WordHelper.swift */,
 				E7FF1EB61E248CFC0028B5A4 /* Assets.xcassets */,
 				E7FF1EB81E248CFC0028B5A4 /* LaunchScreen.storyboard */,
 				E7FF1EBB1E248CFC0028B5A4 /* Info.plist */,
@@ -219,9 +231,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7FF1EC61E24C40E0028B5A4 /* Player.swift in Sources */,
+				E71B634F1E25D23600B2B92B /* WordTableViewCell.swift in Sources */,
+				E71B634D1E25CAD400B2B92B /* WordHelper.swift in Sources */,
 				E7FF1EB01E248CFC0028B5A4 /* AppDelegate.swift in Sources */,
+				E71B63491E25B48D00B2B92B /* Word.swift in Sources */,
 				E7FF1EC41E248E0D0028B5A4 /* CardCollectionViewCell.swift in Sources */,
 				E7FF1EC21E248DB40028B5A4 /* MainGameCollectionViewController.swift in Sources */,
+				E71B634B1E25B69300B2B92B /* WordsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +403,7 @@
 				E7FF1EC01E248CFC0028B5A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -16,8 +16,8 @@ class MainGameCollectionViewController: UICollectionViewController {
     let baseWords = ["water", "melon", "pencil", "school", "watch", "book", "piano", "candy", "kitchen", "game", "flower", "road", "run", "walk", "what", "chair"]
     let basePlayers = ["아빠", "엄마", "나"]
     
-    var doubled = [String]()
-    var shuffled = [String]()
+    var doubled = [Word]()
+    var words = [Word]()
     
     var shuffledPlayers = [String]()
     var thePlayers = [Player]()
@@ -53,6 +53,7 @@ class MainGameCollectionViewController: UICollectionViewController {
     
     //MARK: Logics
     func reset() {
+        /*
         // 단어를 두 배로 뻥튀기 한 다음에 섞어 준다
         doubled.removeAll()
         doubled.append(contentsOf: baseWords)
@@ -75,6 +76,31 @@ class MainGameCollectionViewController: UICollectionViewController {
         updatePlayerPoints()
         highlightCurrentPlayer()
         collectionView?.reloadData()
+        */
+        
+        // 단어를 두 배로 뻥튀기 한 다음에 섞어 준다
+        doubled.removeAll()
+        doubled = [Word]()
+        let shuffled = WordHelper.shuffledOf(draw: 16)
+        doubled.append(contentsOf: shuffled!)
+        doubled.append(contentsOf: shuffled!)
+        words = doubled.shuffled
+        
+        // 플레이어를 섞은 다음에 셋팅한다
+        shuffledPlayers = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: basePlayers) as! [String]
+        print(shuffledPlayers)
+        thePlayers.removeAll()
+        for shuffled in shuffledPlayers {
+            let player = Player()
+            player.name = shuffled
+            thePlayers.append(player)
+        }
+        print(thePlayers)
+        currentOrder = 0
+        updatePlayerPoints()
+        highlightCurrentPlayer()
+        collectionView?.reloadData()
+        
     }
     
     func checkFlippedWords() {
@@ -165,15 +191,19 @@ class MainGameCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return shuffled.count
+        //return shuffled.count
+        if words.count < 32 {
+            return 0
+        }
+        return words.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CardCollectionViewCell
     
         // Configure the cell
-        cell.theWord = shuffled[indexPath.row]
-        //cell.backgroundColor = UIColor.white
+        let word = words[indexPath.row]
+        cell.theWord = word.content
         
         return cell
     }

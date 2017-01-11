@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,10 +32,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="8Oo-OW-6Uh">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="8Oo-OW-6Uh">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -79,7 +80,11 @@
                         <barButtonItem title="엄마 : 0" id="YgN-dS-9Bf"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="단어 맞추기 게임" id="A6I-ta-rtE">
-                        <barButtonItem key="leftBarButtonItem" title="단어" id="sy3-74-zvx"/>
+                        <barButtonItem key="leftBarButtonItem" title="단어" id="sy3-74-zvx">
+                            <connections>
+                                <segue destination="F53-1t-o5K" kind="show" id="DHl-HL-zmq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="시작" id="Y3p-2D-9C3">
                             <connections>
                                 <action selector="startButtonTappedWithSender:" destination="VZh-z9-l6y" id="3di-bs-2Dn"/>
@@ -95,6 +100,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9V-0z-y1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1677.5999999999999" y="135.38230884557723"/>
+        </scene>
+        <!--단어장-->
+        <scene sceneID="n3l-QL-iaz">
+            <objects>
+                <tableViewController id="F53-1t-o5K" customClass="WordsTableViewController" customModule="WordMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iZq-6f-L0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WordCell" id="x0j-n9-86O" customClass="WordTableViewCell" customModule="WordMatch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x0j-n9-86O" id="zP2-AI-biy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR0-y0-u5o">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="7zG-YV-5nb"/>
+                                                <constraint firstAttribute="width" constant="42" id="BnQ-su-X7R"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTr-AH-TcB">
+                                            <rect key="frame" x="58" y="11" width="266" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twr-4c-WbR">
+                                            <rect key="frame" x="332" y="4" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="0XJ-lJ-GZZ"/>
+                                                <constraint firstAttribute="height" constant="35" id="JW7-gq-hXM"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="right"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="VTr-AH-TcB" firstAttribute="centerY" secondItem="zP2-AI-biy" secondAttribute="centerY" id="3SJ-Mi-JFs"/>
+                                        <constraint firstItem="hR0-y0-u5o" firstAttribute="centerY" secondItem="zP2-AI-biy" secondAttribute="centerY" id="BW4-py-R70"/>
+                                        <constraint firstItem="Twr-4c-WbR" firstAttribute="centerY" secondItem="zP2-AI-biy" secondAttribute="centerY" id="SSb-rp-3xY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Twr-4c-WbR" secondAttribute="trailing" id="eiq-Jp-I9Q"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="hR0-y0-u5o" secondAttribute="leading" id="qJF-OY-iob"/>
+                                        <constraint firstItem="Twr-4c-WbR" firstAttribute="leading" secondItem="VTr-AH-TcB" secondAttribute="trailing" constant="8" id="tEJ-lB-77A"/>
+                                        <constraint firstItem="VTr-AH-TcB" firstAttribute="leading" secondItem="hR0-y0-u5o" secondAttribute="trailing" constant="8" id="ulP-4J-DsM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="selectableButton" destination="Twr-4c-WbR" id="tkL-VY-dTx"/>
+                                    <outlet property="selectedCount" destination="hR0-y0-u5o" id="zIo-08-TSH"/>
+                                    <outlet property="spelling" destination="VTr-AH-TcB" id="fQq-pn-ztM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="F53-1t-o5K" id="eet-Ri-7Jz"/>
+                            <outlet property="delegate" destination="F53-1t-o5K" id="zgK-iQ-Pm5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="단어장" id="eWC-cE-zM2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eiO-8H-xhq">
+                            <connections>
+                                <action selector="addWordButtonTappedWithSender:" destination="F53-1t-o5K" id="44L-Uy-x0i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUO-Zu-F8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2408.8000000000002" y="134.48275862068968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IPX-6z-Ywe">
@@ -121,5 +201,6 @@
     </scenes>
     <resources>
         <image name="carrots-pattern" width="16" height="16"/>
+        <image name="right" width="16" height="16"/>
     </resources>
 </document>
