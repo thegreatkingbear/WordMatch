@@ -74,6 +74,7 @@ class MainGameCollectionViewController: UICollectionViewController {
         currentOrder = 0
         updatePlayerPoints()
         highlightCurrentPlayer()
+        collectionView?.reloadData()
     }
     
     func checkFlippedWords() {
@@ -87,7 +88,7 @@ class MainGameCollectionViewController: UICollectionViewController {
                 clearedCells.append(flippedWords[1])
                 flippedWords.removeAll()
             } else {
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7, execute: {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                     self.nextTurn()
                     self.flippedWords[0].flipCardAnimation(isForward: false)
                     self.flippedWords[1].flipCardAnimation(isForward: false)
@@ -184,6 +185,15 @@ class MainGameCollectionViewController: UICollectionViewController {
         flippedWords.append(cell)
         cell.flipCardAnimation(isForward: true)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        let cellWidth = (self.collectionView?.bounds.size.width)! / 4.0 - 15.0
+        //print(cellWidth)
+        let cellHeight = ((self.collectionView?.bounds.size.height)! - (self.navigationController?.navigationBar.frame.size.height)! - (self.navigationController?.toolbar.frame.size.height)! - 20.0) / 8.0 - 12.0
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
