@@ -77,8 +77,16 @@ class WordHelper {
     }
     
     class func shuffledOf(draw: Int) -> [Word]? {
+        let realm = try! Realm()
         if let selectable = allSelectable() {
-            return Array(selectable).choose(draw)
+            let chosenArray = Array(selectable).choose(draw)
+            for chosen in chosenArray {
+                let count = chosen.selectedCount
+                try! realm.write {
+                    chosen.selectedCount = count + 1
+                }
+            }
+            return chosenArray
         }
         return nil
     }
