@@ -25,4 +25,7 @@ class WordTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func selectButtonTapped(sender: UIButton) {
+        WordHelper.toggleSelectable(spelling: spelling!.text!)
+    }
 }

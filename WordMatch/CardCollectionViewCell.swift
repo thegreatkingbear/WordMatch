@@ -20,11 +20,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     var isCleared: Bool = false
     
-    override var isSelected: Bool {
-        didSet {
-            
-        }
-    }
     
     func flipCardAnimation(isForward: Bool) {
         if isForward {

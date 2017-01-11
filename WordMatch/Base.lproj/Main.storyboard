@@ -140,6 +140,9 @@
                                                 <constraint firstAttribute="height" constant="35" id="JW7-gq-hXM"/>
                                             </constraints>
                                             <state key="normal" backgroundImage="right"/>
+                                            <connections>
+                                                <action selector="selectButtonTappedWithSender:" destination="x0j-n9-86O" eventType="touchUpInside" id="Mzy-s4-nKN"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

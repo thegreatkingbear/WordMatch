@@ -60,14 +60,17 @@ class WordHelper {
         }
     }
     
-    class func updateSelectable(word: Word, selectable: Bool) {
+    class func toggleSelectable(spelling: String) {
         let realm = try! Realm()
-        do {
-            try realm.write {
-                word.isSelectable = selectable
+        if let word = realm.object(ofType: Word.self, forPrimaryKey: spelling) {
+            let selectable = word.isSelectable
+            do {
+                try realm.write {
+                    word.isSelectable = !selectable
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
             }
-        } catch let error as NSError {
-            print(error.localizedDescription)
         }
     }
     
