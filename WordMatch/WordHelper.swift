@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import SDCAlertView
 
 class WordHelper {
     class func all() -> Results<Word>? {
@@ -24,16 +25,25 @@ class WordHelper {
     
     class func add(spelling: String, completion:@escaping(Bool) -> Void) {
         let realm = try! Realm()
-        let word = Word()
-        word.content = spelling
-        do {
-            try realm.write {
-                realm.add(word)
+        if let _ = realm.object(ofType: Word.self, forPrimaryKey: spelling) {
+            let alert = AlertController(title: "같은 단어가 있습니다", message: "새로운 단어를 입력해주세요", preferredStyle: .alert)
+            let okAction = AlertAction(title: "확인", style: .normal, handler: { (action) in
+                completion(false)
+            })
+            alert.add(okAction)
+            alert.present()
+        } else {
+            let word = Word()
+            word.content = spelling
+            do {
+                try realm.write {
+                    realm.add(word, update: false)
+                }
+                completion(true)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+                completion(false)
             }
-            completion(true)
-        } catch let error as NSError {
-            print(error.localizedDescription)
-            completion(false)
         }
     }
     

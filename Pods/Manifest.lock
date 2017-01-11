@@ -4,14 +4,17 @@ PODS:
   - Realm/Headers (2.1.2)
   - RealmSwift (2.1.2):
     - Realm (= 2.1.2)
+  - SDCAlertView (7.1)
 
 DEPENDENCIES:
   - RealmSwift
+  - SDCAlertView (~> 7.0)
 
 SPEC CHECKSUMS:
   Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
   RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
+  SDCAlertView: b92fd1f00e522e18a062005e15a16c1e8295c5b5
 
-PODFILE CHECKSUM: c41882a36ab8becb757b273eec60290da15392cc
+PODFILE CHECKSUM: 3b458a16aa96ad128113c3cfe0942cf25e8de154
 
 COCOAPODS: 1.2.0.beta.1

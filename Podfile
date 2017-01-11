@@ -7,6 +7,7 @@ target 'WordMatch' do
 
   # Pods for WordMatch
   pod 'RealmSwift'
+  pod 'SDCAlertView', '~> 7.0'
 
 end
 

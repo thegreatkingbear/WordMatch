@@ -19,20 +19,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>84E3A11EC098B6FFACC23AC09D5C3BAE</key>
+		<key>00CBB4FC391F9605A800E654EA0D54DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DB22FF8D4A6B944DA6CE2F7F5FE36B61</key>
+		<key>40743506AB1711D66D5B6826CB4A76E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E24ABD981B53FDB3A4C04B9DE9925BB2</key>
+		<key>C82DD6D1B9439458390C7B181385FC1A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF109D055E7FB128B9CBF8D751B5A535</key>
 		<dict>
 			<key>primary</key>
 			<true/>

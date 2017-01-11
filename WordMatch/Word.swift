@@ -13,4 +13,8 @@ class Word: Object {
     dynamic var content: String = ""
     dynamic var isSelectable: Bool = true
     dynamic var selectedCount: Int = 0
+    
+    override static func primaryKey() -> String? {
+        return "content"
+    }
 }
