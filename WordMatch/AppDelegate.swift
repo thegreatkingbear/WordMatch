@@ -18,15 +18,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        // Realm Objects Migrations
-        let config = Realm.Configuration(
-            schemaVersion: 2,
-            migrationBlock: {
-                migration, oldSchemaVersion in
-                // 버전 2로 올라오면서 Word의 content를 primary key로 변경
-        })
-        Realm.Configuration.defaultConfiguration = config
-        let _ = try! Realm() // 스키마 바뀐걸 알려주려면 렘을 열어야 함
+        // Log in existing user with username and password
+        let username = "pporri@gmail.com"  // <--- Update this
+        let password = "morris"  // <--- Update this
+        
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false), server: URL(string: "http://192.168.1.66:9080")!) { user, error in
+            guard let user = user else {
+                fatalError(String(describing: error))
+            }
+            
+            // Open Realm
+            let configuration = Realm.Configuration(
+                syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://192.168.1.66:9080/~/wordmatch")!),
+                schemaVersion: 3,
+                migrationBlock: {
+                    migration, oldSchemaVersion in
+                    print("migration : \(migration) oldSchemaVersion : \(oldSchemaVersion)")
+                    // 버전 2로 올라오면서 Word의 content를 primary key로 변경
+                    // ?? 버전 3은 렘 서버 싱크 올리려고 하니까 에러나서 올려봄
+                    if (oldSchemaVersion < 3) {
+                        migration.enumerateObjects(ofType: Player.className(), { (oldObject, newObject) in
+                            let player = Player()
+                            let propertNames = oldObject?.objectSchema.properties.map { $0.name }
+                            let values = oldObject?.dictionaryWithValues(forKeys: propertNames!)
+                            player.setValuesForKeys(values!)
+                        })
+                        migration.enumerateObjects(ofType: Word.className(), { (oldObject, newObject) in
+                            let word = Word()
+                            let propertNames = oldObject?.objectSchema.properties.map { $0.name }
+                            let values = oldObject?.dictionaryWithValues(forKeys: propertNames!)
+                            word.setValuesForKeys(values!)
+                        })
+                    }
+            })
+            Realm.Configuration.defaultConfiguration = configuration
+            let _ = try! Realm()
+        }
         
         return true
     }

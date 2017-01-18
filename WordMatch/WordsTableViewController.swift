@@ -21,10 +21,9 @@ class WordsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
         // realm의 fine grained notification 사용
-        notificationToken = WordHelper.all()?.addNotificationBlock({ (changes) in
-            //print(changes)
+        self.notificationToken = WordHelper.all()?.addNotificationBlock({ (changes) in
+            print(changes)
             switch changes {
             case .initial: self.tableView.reloadData()
             case .update(_, let deletions, let insertions, let updates):
@@ -138,5 +137,4 @@ class WordsTableViewController: UITableViewController {
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
-
 }

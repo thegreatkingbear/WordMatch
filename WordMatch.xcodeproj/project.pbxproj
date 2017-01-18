@@ -29,6 +29,7 @@
 		E71B634A1E25B69300B2B92B /* WordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsTableViewController.swift; sourceTree = "<group>"; };
 		E71B634C1E25CAD400B2B92B /* WordHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordHelper.swift; sourceTree = "<group>"; };
 		E71B634E1E25D23600B2B92B /* WordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
+		E739A6E01E2F738A00D5E11A /* WordMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WordMatch.entitlements; sourceTree = "<group>"; };
 		E7FF1EAC1E248CFC0028B5A4 /* WordMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FF1EAF1E248CFC0028B5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7FF1EB41E248CFC0028B5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		E7FF1EAE1E248CFC0028B5A4 /* WordMatch */ = {
 			isa = PBXGroup;
 			children = (
+				E739A6E01E2F738A00D5E11A /* WordMatch.entitlements */,
 				E7FF1EC11E248DB40028B5A4 /* MainGameCollectionViewController.swift */,
 				E7FF1EC51E24C40E0028B5A4 /* Player.swift */,
 				E71B63481E25B48D00B2B92B /* Word.swift */,
@@ -143,6 +145,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9E3BES8CW5;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -361,6 +368,7 @@
 			baseConfigurationReference = 5C24F140E835E3ADD7B66E69 /* Pods-WordMatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WordMatch/WordMatch.entitlements;
 				DEVELOPMENT_TEAM = 9E3BES8CW5;
 				INFOPLIST_FILE = WordMatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -375,6 +383,7 @@
 			baseConfigurationReference = 6BD6382F4B654CB99194A1F8 /* Pods-WordMatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WordMatch/WordMatch.entitlements;
 				DEVELOPMENT_TEAM = 9E3BES8CW5;
 				INFOPLIST_FILE = WordMatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
